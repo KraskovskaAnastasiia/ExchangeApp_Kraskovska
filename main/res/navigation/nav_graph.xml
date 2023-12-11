@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/currencyRateListFragment">
+    <fragment
+        android:id="@+id/currencyRateListFragment"
+        android:name="com.example.exchangeapp.view.CurrencyRateListFragment"
+        android:label="Курси іноземних валют до гривні"
+        tools:layout="@layout/exchange_rate_list_fragment">
+        <action
+            android:id="@+id/action_postListFragment_to_postDetailFragment"
+            app:destination="@id/currencyRateDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/currencyRateDetailFragment"
+        android:name="com.example.exchangeapp.view.CurrencyRateDetailFragment"
+        android:label="Курс цієї валюти до гривні"
+        tools:layout="@layout/exchange_rate_detail_fragment">
+        <argument
+            android:name="exchangeRate"
+            app:argType="com.example.exchangeapp.data.ExchangeRate" />
+    </fragment>
+</navigation>
